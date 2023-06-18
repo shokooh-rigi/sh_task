@@ -5,15 +5,10 @@ from .views import HistoryViewSet, SumAPIView, TotalAPIView
 
 app_name = 'sh_app'
 
-router = routers.DefaultRouter()
-router.register(r'history', HistoryViewSet)
-
 urlpatterns = [
 
-    path('sum/', SumAPIView.as_view()),
-    path('total/', TotalAPIView.as_view()),
+    path('sum/', SumAPIView.as_view(), name='sum'),
+    path('total/', TotalAPIView.as_view(), name='total'),
+    path('history/', HistoryViewSet.as_view(), name='history'),
     path('', include(router.urls)),
-
 ]
-
-urlpatterns += router.urls
