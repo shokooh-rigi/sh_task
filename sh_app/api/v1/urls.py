@@ -9,6 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'history', HistoryViewSet)
 
 urlpatterns = [
+
     path('sum/', SumAPIView.as_view()),
     path('total/', TotalAPIView.as_view()),
     path('', include(router.urls)),

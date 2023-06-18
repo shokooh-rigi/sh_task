@@ -1,0 +1,14 @@
+# Ignore any IDE specific files or directories
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+# Ignore build directories
+/build/
+/dist/
+
+node_modules/
+*.log
+.env*
+package-lock.json
