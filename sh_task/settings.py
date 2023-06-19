@@ -132,8 +132,8 @@ REST_FRAMEWORK = {
         'sh_app.utils.IncorrectRequestThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'incorrect_requests': '3/hour',
+        'incorrect_requests': '15/hour',
     },
     'EXCEPTION_HANDLER': 'sh_app.utils.custom_exception_handler',
 }
-# USER_RATE = config('USER_RATE', default='3/hour')
+# USER_RATE = config('USER_RATE', default='100/hour')
