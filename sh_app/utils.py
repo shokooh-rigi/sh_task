@@ -7,10 +7,10 @@ class IncorrectRequestThrottle(SimpleRateThrottle):
     scope = 'incorrect_requests'
 
     def allow_request(self, request, view):
-        if request.method.lower() in ('post', 'put', 'patch', 'delete'):
-            return False
+        if request.method.lower() not in ('post', 'put', 'patch', 'delete'):
+            return True
         if request.content_type != 'application/json':
-            return False
+            return True
 
         return super().allow_request(request, view)
 
