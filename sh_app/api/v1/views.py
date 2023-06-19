@@ -9,12 +9,12 @@ from rest_framework.views import APIView
 from .serializers import CalculationSerializer
 from ...models import Calculation
 
+#
+# class CustomThrottle(UserRateThrottle):
+#     rate = settings.USER_RATE
 
-class CustomThrottle(UserRateThrottle):
-    rate = settings.USER_RATE
 
-
-@throttle_classes([CustomThrottle])
+# @throttle_classes([CustomThrottle])
 class SumAPIView(APIView):
     def get(self, request):
         a = int(request.GET.get('a', 0))
